@@ -13,12 +13,38 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 16px 60px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
+.nav {
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+
+/* Profile Section */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.profile img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #1dbf73;
+}
+
+.profile span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
 
 .logo img {
     height: 50px;
@@ -87,7 +113,7 @@ body {
 .hero {
     height: calc(100vh - 220px);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 40px 80px;
     background: linear-gradient(135deg, #e8fff3, #f6fffb);
@@ -174,5 +200,9 @@ body {
 
     .hero-image img {
         width: 300px;
+    }
+
+    .profile span {
+        display: none;
     }
 }
