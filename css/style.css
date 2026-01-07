@@ -206,7 +206,6 @@ body {
         display: none;
     }
 }
-/* ===== Skeleton Loader ===== */
 
 .loading .hero-content,
 .loading .hero-image {
@@ -234,7 +233,6 @@ body {
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
-/* ===== Products Page ===== */
 
 .page {
   padding: 40px 60px;
