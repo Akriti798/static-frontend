@@ -23,7 +23,7 @@ body {
 }
 
 
-/* Profile Section */
+
 .profile {
     display: flex;
     align-items: center;
@@ -121,12 +121,9 @@ body {
 
 
 .hero-content {
-    max-width: 520px;
-    background: #ffffff;
     padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
+
 
 .hero-content h1 {
     font-size: 42px;
@@ -161,8 +158,10 @@ body {
 }
 
 .hero-image img {
-    width: 320px;
-    margin-left: 300px;
+     display: flex;
+    justify-content: center;
+    border-radius: 150px;
+    /* margin-left: 300px; */
     animation: float 3s ease-in-out infinite;
 }
 
@@ -205,4 +204,32 @@ body {
     .profile span {
         display: none;
     }
+}
+/* ===== Skeleton Loader ===== */
+
+.loading .hero-content,
+.loading .hero-image {
+    background: linear-gradient(
+        90deg,
+        #eeeeee 25%,
+        #dddddd 37%,
+        #eeeeee 63%
+    );
+    background-size: 400% 100%;
+    animation: shimmer 1.4s infinite;
+    color: transparent;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -400px 0;
+    }
+    100% {
+        background-position: 400px 0;
+    }
+}
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
