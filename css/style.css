@@ -273,3 +273,53 @@ body {
 .status.unavailable {
   color: #e53935;
 }
+.product-name {
+  margin-bottom: 8px;
+}
+
+/* .add-btn {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  padding: 8px 14px ;
+  background-color: #1DBF73;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-btn:hover {
+  background-color: #159A5B;
+} */
+
+.add-btn {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  padding: 10px 94px;
+  background-color: #1DBF73;   /* default */
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #159A5B;   /* hover */
+  transform: translateY(-1px);
+}
+
+.empty-state {
+  margin-top: 40px;
+  font-size: 16px;
+  color: #777;
+}
+.add-btn.disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
