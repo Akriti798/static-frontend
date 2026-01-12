@@ -45,6 +45,8 @@
     onkeyup="searchProducts()"
   />
 </div>
+<script src="../script.js"></script>
+
 
 
     <div class="product-grid">
@@ -59,7 +61,7 @@
         <h3>Bread</h3>
         <p class="price">₹30/p</p>
         <p class="status available">Available</p>
-        <button class="add-btn">Add to Cart</button>
+<button class="add-btn" onclick="openCart()">Add to Cart</button>
       </div>
 
       <div class="product-card card" data-name="rice">
@@ -114,6 +116,32 @@
   <footer class="footer">
     <p>© 2025 Frookoon. All rights reserved.</p>
   </footer>
+
+  <!-- ===== Add to Cart Modal ===== -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-box">
+    <h3>Bread</h3>
+    <p>₹30 per piece</p>
+
+    <div class="quantity-control">
+      <button onclick="decreaseQty()">−</button>
+      <span id="qty">1</span>
+      <button onclick="increaseQty()">+</button>
+    </div>
+
+    <!-- Final Summary Box -->
+    <div class="final-summary">
+      <p id="itemSummary">1 Bread</p>
+      <p id="totalAmount">Total: ₹30</p>
+    </div>
+
+    <div class="cart-actions">
+      <button class="confirm-btn">Proceed to Payment</button>
+      <button class="cancel-btn" onclick="closeCart()">Cancel</button>
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>
