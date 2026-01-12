@@ -37,36 +37,77 @@
     <h2>Available Products</h2>
     <!-- <p class="empty-state">No other products available at the moment.</p> -->
 
+    <div class="search-wrapper">
+  <input
+    type="text"
+    id="productSearch"
+    placeholder="Search products..."
+    onkeyup="searchProducts()"
+  />
+</div>
+
+
     <div class="product-grid">
-      <div class="product-card card">
+      <div class="product-card card" data-name="milk">
         <h3>Milk</h3>
         <p class="price">₹70/litre</p>
         <p class="status available">Available</p>
         <button class="add-btn">Add to Cart</button>
       </div>
 
-      <div class="product-card card">
+      <div class="product-card card" data-name="bread">
         <h3>Bread</h3>
         <p class="price">₹30/p</p>
         <p class="status available">Available</p>
         <button class="add-btn">Add to Cart</button>
       </div>
 
-      <div class="product-card card">
+      <div class="product-card card" data-name="rice">
         <h3>Rice</h3>
         <p class="price">₹60/kg</p>
         <p class="status available">Available</p>
         <button class="add-btn">Add to Cart</button>
       </div>
 
-      <div class="product-card card">
+      <div class="product-card card" data-name="cooking oil">
         <h3>Cooking Oil</h3>
         <p class="price">₹120/litre</p>
         <p class="status unavailable">Out of Stock</p>
         <button class="add-btn disabled">unavailable</button>
 
+       
+
+
         <!-- <button class="add-btn">Add to Cart</button> -->
       </div>
+
+       <div class="product-card card" data-name="eggs">
+  <h3>Eggs</h3>
+  <p class="price">₹6/piece</p>
+  <p class="status available">Available</p>
+  <button class="add-btn">Add to Cart</button>
+</div>
+
+<div class="product-card card" data-name="sugar">
+  <h3>Sugar</h3>
+  <p class="price">₹45/kg</p>
+  <p class="status available">Available</p>
+  <button class="add-btn">Add to Cart</button>
+</div>
+
+<div class="product-card card" data-name="salt">
+  <h3>Salt</h3>
+  <p class="price">₹20/kg</p>
+  <p class="status available">Available</p>
+  <button class="add-btn">Add to Cart</button>
+</div>
+
+<div class="product-card card" data-name="tea">
+  <h3>Tea</h3>
+  <p class="price">₹150/250g</p>
+  <p class="status unavailable">Out of Stock</p>
+  <button class="add-btn disabled">Unavailable</button>
+</div>
     </div>
   </section>
 

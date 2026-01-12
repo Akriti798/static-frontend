@@ -239,13 +239,29 @@ body {
   background-color: #1dbf73;
 }
 
-.product-grid {
+/* .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
   margin-top: 20px;
   padding: 20px;
+} */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  align-items: stretch; /* equal height cards */
 }
+.product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* button at bottom */
+  min-height: 220px; /* fixes stretching issue */
+}
+
 
 .product-card h3 {
   margin-bottom: 10px;
@@ -298,7 +314,7 @@ body {
   margin-top: 8px;
   margin-bottom: 10px;
   margin-left: 5px;
-  padding: 10px 94px;
+  padding: 10px 54px;
   background-color: #1DBF73;   /* default */
   color: #ffffff;
   border: none;
@@ -322,4 +338,23 @@ body {
 .add-btn.disabled {
   background-color: #cccccc;
   cursor: not-allowed;
+}
+/* ===== Product Search ===== */
+
+.search-wrapper {
+  margin: 20px 0;
+}
+
+.search-wrapper input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 18px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-wrapper input:focus {
+  border-color: #1dbf73;
 }
