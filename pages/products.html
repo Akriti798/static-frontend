@@ -9,139 +9,224 @@
 </head>
 <body>
 
+  <!-- ===== Header ===== -->
   <header class="header">
-    <div class="logo" >
+    <div class="logo">
       <img
         src="../images/Untitled_design__1_-removebg-preview.webp"
         alt="Frookoon Logo"
-        loading="lazy"
       />
     </div>
 
     <nav class="nav">
       <a href="home.html">Home</a>
-      <a href="products.html">Stores</a>
+      <a href="products.html">Products</a>
     </nav>
 
-    <div class="profile">
-      <img
-        src="../images/user-icon-icon_1076610-59410.avif"
-        alt="User Profile"
-        loading="lazy"
-      />
-      <span>User</span>
+    <div class="profile dropdown">
+      <img src="../images/user-icon-icon_1076610-59410.avif" alt="User" />
+      <span onclick="toggleMenu()">User</span>
+
+  <div class="dropdown-menu" id="userMenu">
+    <a href="#">Profile</a>
+    <a href="cart.html">Your Cart</a>
+    <a href="#">Settings</a>
+    <a href="#" onclick="logout()">Logout</a>
     </div>
   </header>
 
+  <script>
+  if (!localStorage.getItem("token")) {
+    window.location.href = "login.html";
+  }
+</script>
+
+
+  <!-- ===== Products Page ===== -->
   <section class="page">
     <h2>Available Products</h2>
-    <!-- <p class="empty-state">No other products available at the moment.</p> -->
 
+    <!-- Search -->
     <div class="search-wrapper">
-  <input
-    type="text"
-    id="productSearch"
-    placeholder="Search products..."
-    onkeyup="searchProducts()"
-  />
-</div>
-<script src="../script.js"></script>
+      <input
+        type="text"
+        id="productSearch"
+        placeholder="Search products..."
+        onkeyup="searchProducts()"
+      />
+    </div>
 
-
-
+    <!-- ===== GROCERIES ===== -->
+    <h2 class="category-title">Groceries</h2>
     <div class="product-grid">
+
       <div class="product-card card" data-name="milk">
+        <img src="../images/milk.jpg" class="product-img" alt="Milk" />
         <h3>Milk</h3>
         <p class="price">₹70/litre</p>
         <p class="status available">Available</p>
-        <button class="add-btn">Add to Cart</button>
+<button class="add-btn" onclick="addToCart('Milk', 70, '../images/milk.jpg')">Add to Cart</button>
+<p class="added-text hidden">Added to cart ✓</p>
       </div>
 
       <div class="product-card card" data-name="bread">
+        <img src="../images/bread.jpg" class="product-img" alt="Bread" />
         <h3>Bread</h3>
         <p class="price">₹30/p</p>
         <p class="status available">Available</p>
-<button class="add-btn" onclick="openCart()">Add to Cart</button>
+<button class="add-btn" onclick="addToCart('bread', 30 , '../images/bread.jpg')">Add to Cart</button>
+<p class="added-text hidden">Added to cart ✓</p>
       </div>
 
       <div class="product-card card" data-name="rice">
+        <img src="../images/rice.jpg" class="product-img" alt="Rice" />
         <h3>Rice</h3>
         <p class="price">₹60/kg</p>
         <p class="status available">Available</p>
-        <button class="add-btn">Add to Cart</button>
+<button class="add-btn" onclick="addToCart('rice', 60, '../images/rice.jpg')">Add to Cart</button>
+<p class="added-text hidden">Added to cart ✓</p>
       </div>
 
-      <div class="product-card card" data-name="cooking oil">
+      <div class="product-card card" data-name="oil">
+        <img src="../images/oil.jpg" class="product-img" alt="Cooking Oil" />
         <h3>Cooking Oil</h3>
         <p class="price">₹120/litre</p>
         <p class="status unavailable">Out of Stock</p>
-        <button class="add-btn disabled">unavailable</button>
-
-       
-
-
-        <!-- <button class="add-btn">Add to Cart</button> -->
+        <button class="add-btn disabled">Unavailable</button>
       </div>
 
-       <div class="product-card card" data-name="eggs">
-  <h3>Eggs</h3>
-  <p class="price">₹6/piece</p>
-  <p class="status available">Available</p>
-  <button class="add-btn">Add to Cart</button>
-</div>
+      <div class="product-card card" data-name="eggs">
+        <img src="../images/eggs.jpg" class="product-img" alt="Eggs" />
+        <h3>Eggs</h3>
+        <p class="price">₹6/piece</p>
+        <p class="status available">Available</p>
+<button class="add-btn" onclick="addToCart('Eggs', 6, '../images/eggs.jpg')">Add to Cart</button>
+<p class="added-text hidden">Added to cart ✓</p>
+      </div>
 
-<div class="product-card card" data-name="sugar">
-  <h3>Sugar</h3>
-  <p class="price">₹45/kg</p>
-  <p class="status available">Available</p>
-  <button class="add-btn">Add to Cart</button>
-</div>
+      <div class="product-card card" data-name="sugar">
+        <img src="../images/sugar.jpg" class="product-img" alt="Sugar" />
+        <h3>Sugar</h3>
+        <p class="price">₹45/kg</p>
+        <p class="status available">Available</p>
+<button class="add-btn" onclick="addToCart('Sugar', 45, '../images/sugar.jpg')">Add to Cart</button>
+<p class="added-text hidden">Added to cart ✓</p>
+      </div>
 
-<div class="product-card card" data-name="salt">
-  <h3>Salt</h3>
-  <p class="price">₹20/kg</p>
-  <p class="status available">Available</p>
-  <button class="add-btn">Add to Cart</button>
-</div>
+      <div class="product-card card" data-name="salt">
+        <img src="../images/salt.jpg" class="product-img" alt="Salt" />
+        <h3>Salt</h3>
+        <p class="price">₹20/kg</p>
+        <p class="status available">Available</p>
+<button class="add-btn" onclick="addToCart('Salt', 20, '../images/salt.jpg')">Add to Cart</button>
+<p class="added-text hidden">Added to cart ✓</p>
+      </div>
 
-<div class="product-card card" data-name="tea">
-  <h3>Tea</h3>
-  <p class="price">₹150/250g</p>
-  <p class="status unavailable">Out of Stock</p>
-  <button class="add-btn disabled">Unavailable</button>
-</div>
+      <div class="product-card card" data-name="tea">
+        <img src="../images/tea.jpg" class="product-img" alt="Tea" />
+        <h3>Tea</h3>
+        <p class="price">₹150/250g</p>
+        <p class="status unavailable">Out of Stock</p>
+        <button class="add-btn disabled">Unavailable</button>
+
+      </div>
+
     </div>
+
+    <!-- ===== APPARELS ===== -->
+    <h2 class="category-title">Apparels</h2>
+    <div class="product-grid">
+
+      <div class="product-card card" data-name="tshirt">
+        <img src="../images/tshirt.jpg" class="product-img" alt="T-shirt" />
+        <h3>T-shirt</h3>
+        <p class="price">₹499</p>
+        <p class="status available">Available</p>
+<button class="add-btn" onclick="addToCart('T-shirt', 499, '../images/tshirt.jpg')">Add to Cart</button>
+<p class="added-text hidden">Added to cart ✓</p>
+      </div>
+
+      <div class="product-card card" data-name="jeans">
+        <img src="../images/jeans.jpg" class="product-img" alt="Jeans" />
+        <h3>Jeans</h3>
+        <p class="price">₹1199</p>
+        <p class="status available">Available</p>
+<button class="add-btn" onclick="addToCart('Jeans', 1199, '../images/jeans.jpg')">Add to Cart</button>
+<p class="added-text hidden">Added to cart ✓</p>
+      </div>
+
+    </div>
+
+    <!-- ===== ACCESSORIES ===== -->
+    <h2 class="category-title">Accessories</h2>
+    <div class="product-grid">
+
+      <div class="product-card card" data-name="watch">
+        <img src="../images/watch.jpg" class="product-img" alt="Watch" />
+        <h3>Watch</h3>
+        <p class="price">₹1999</p>
+        <p class="status available">Available</p>
+<button class="add-btn" onclick="addToCart('Milk', 1999, '../images/watch.jpg')">Add to Cart</button>
+<p class="added-text hidden">Added to cart ✓</p>
+      </div>
+
+    </div>
+
+    <!-- ===== MISCELLANEOUS ===== -->
+    <h2 class="category-title">Miscellaneous</h2>
+    <div class="product-grid">
+
+      <div class="product-card card" data-name="bottle">
+        <img src="../images/bottle.jpg" class="product-img" alt="Bottle" />
+        <h3>Water Bottle</h3>
+        <p class="price">₹299</p>
+        <p class="status available">Available</p>
+<button class="add-btn" onclick="addToCart('Bottle', 299, '../images/bottle.jpg')">Add to Cart</button>
+<p class="added-text hidden">Added to cart ✓</p>
+      </div>
+
+      <div class="product-card card" data-name="notebook">
+        <img src="../images/notebook.jpg" class="product-img" alt="Notebook" />
+        <h3>Notebook</h3>
+        <p class="price">₹99</p>
+        <p class="status available">Available</p>
+<button class="add-btn" onclick="addToCart('Notebook', 99, '../images/notebook.jpg')">Add to Cart</button>
+<p class="added-text hidden">Added to cart ✓</p>
+      </div>
+
+    </div>
+
   </section>
 
+  <!-- ===== Footer ===== -->
   <footer class="footer">
     <p>© 2025 Frookoon. All rights reserved.</p>
   </footer>
 
-  <!-- ===== Add to Cart Modal ===== -->
-<div class="cart-modal" id="cartModal">
-  <div class="cart-box">
-    <h3>Bread</h3>
-    <p>₹30 per piece</p>
+  <!-- ===== Cart Modal (existing) ===== -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-box">
+      <h3>Bread</h3>
+      <p>₹30 per piece</p>
 
-    <div class="quantity-control">
-      <button onclick="decreaseQty()">−</button>
-      <span id="qty">1</span>
-      <button onclick="increaseQty()">+</button>
-    </div>
+      <div class="quantity-control">
+        <button onclick="decreaseQty()">−</button>
+        <span id="qty">1</span>
+        <button onclick="increaseQty()">+</button>
+      </div>
 
-    <!-- Final Summary Box -->
-    <div class="final-summary">
-      <p id="itemSummary">1 Bread</p>
-      <p id="totalAmount">Total: ₹30</p>
-    </div>
+      <div class="final-summary">
+        <p id="itemSummary">1 Bread</p>
+        <p id="totalAmount">Total: ₹30</p>
+      </div>
 
-    <div class="cart-actions">
-      <button class="confirm-btn">Proceed to Payment</button>
-      <button class="cancel-btn" onclick="closeCart()">Cancel</button>
+      <div class="cart-actions">
+        <button class="confirm-btn">Proceed to Payment</button>
+        <button class="cancel-btn" onclick="closeCart()">Cancel</button>
+      </div>
     </div>
   </div>
-</div>
 
-
+  <script src="../script.js"></script>
 </body>
 </html>

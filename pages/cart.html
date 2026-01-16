@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+    <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="logo">
+      <img
+        src="../images/Untitled_design__1_-removebg-preview.webp"
+        alt="Frookoon Logo"
+      />
+    </div>
+
+    <nav class="nav">
+      <a href="home.html">Home</a>
+      <a href="products.html">Products</a>
+    </nav>
+
+    <div class="profile dropdown">
+      <img src="../images/user-icon-icon_1076610-59410.avif" alt="User" />
+      <span onclick="toggleMenu()">User</span>
+
+  <div class="dropdown-menu" id="userMenu">
+    <a href="#">Profile</a>
+    <a href="cart.html">Your Cart</a>
+    <a href="#">Settings</a>
+    <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </header>
+
+  <script>
+  if (!localStorage.getItem("token")) {
+    window.location.href = "login.html";
+  }
+</script>
+
+<section class="page2">
+
+  <div class="cart-container">
+  <h2 class="cart-title">Your Cart</h2>
+
+  <div id="cartItems"></div>
+
+  <div id="total" class="cart-total"></div>
+
+  <div class="cart-actions">
+    <button class="checkout-btn" onclick="checkout()">Proceed to Payment</button>
+    <button class="continue-btn" onclick="continueShopping()">Continue Shopping</button>
+  </div>
+</div>
+</section>
+
+<script src="../script.js"></script>
+<script>
+  loadCart();
+</script>
+
+
+
+</body>
+</html>

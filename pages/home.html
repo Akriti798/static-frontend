@@ -20,20 +20,33 @@
 
     <nav class="nav">
       <a href="home.html">Home</a>
-      <a href="products.html">Stores</a>
+      <a href="products.html">Products</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
     </nav>
 
-    <div class="profile">
-      <img
-        src="../images/user-icon-icon_1076610-59410.avif"
-        alt="User Profile"
-        loading="lazy"
-      />
-      <span>User</span>
+    <div class="profile dropdown">
+      <img src="../images/user-icon-icon_1076610-59410.avif" alt="User" />
+      <span onclick="toggleMenu()">User</span>
+
+  <div class="dropdown-menu" id="userMenu">
+    <a href="#">Profile</a>
+    <a href="cart.html">Your Cart</a>
+    <a href="#">Settings</a>
+    <a href="#" onclick="logout()">Logout</a>
     </div>
+    
   </header>
+  <script>
+  if (!localStorage.getItem("token")) {
+    window.location.href = "login.html";
+  }
+</script>
+<section class="page">
+  <h2 id="greeting"></h2>
+  <p>Welcome to Frookoon!</p>
+</section>
+
 
   <section class="top-bar">
     <div class="search-box">
@@ -82,11 +95,26 @@
 
   </section>
 
+
+  <script>
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  if (user && user.name) {
+    document.getElementById("greeting").innerText =
+      `Hello, ${user.name} 👋`;
+  } else {
+    document.getElementById("greeting").innerText =
+      "Hello 👋";
+  }
+</script>
+
+
   <footer class="footer">
     <p>© 2025 Frookoon. All rights reserved.</p>
   </footer>
 
   <script src="../script.js" defer></script>
+
 
 </body>
 </html>

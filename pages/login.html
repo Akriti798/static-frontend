@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frookoon | Login</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+
+    .auth-container {
+      max-width: 420px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .auth-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .auth-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .auth-container button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    .toggle-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-container">
+    <h2 id="formTitle">Register</h2>
+
+    <!-- Name & Email (Register only) -->
+    <input type="text" id="name" placeholder="Full Name" />
+    <input type="email" id="email" placeholder="Email Address" />
+
+    <!-- Phone -->
+    <input type="text" id="phone" placeholder="+91XXXXXXXXXX" />
+
+    <button onclick="sendOtp()">Send OTP</button>
+
+    <!-- OTP -->
+    <div id="otpSection" class="hidden">
+      <input type="text" id="otp" placeholder="Enter OTP" />
+      <button onclick="verifyOtp()">Verify OTP</button>
+    </div>
+
+    <div class="toggle-text" onclick="toggleForm()">
+      Already have an account? Login
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
